@@ -1,0 +1,90 @@
+#schema side
+create table employee1( eno int not null,
+ename varchar(20),age int,occupation varchar(20),
+PRIMARY KEY(eno));
+
+#query side
+describe employee1;
+insert into employee1 values(1,'bhuvana',34,'trainer');
+insert into employee1 values(2,'sharanya',14,'student');
+select * from employee1;
+
+alter table employee1 add column(location varchar(20));
+describe employee1;
+
+update employee1 set location = 'hyd' where eno = 1;
+select * from employee1;
+
+create table called empdetails(empno int,empname varchar(20),dt.of join date,salary int,designation varchar(20));
+insert five records in table.
+
+#schema side
+create table called employee2(empno int,empname varchar(20),dt.of join date,salary int,designation varchar(20));
+
+#query side
+describe employee2;
+insert into employee2 values(10,'first','1990-12-28',2000,'clerk');                               
+insert into employee2 values(11,'second','2004-12-28',20000,'engineer'); 
+#select * from employee2  where empno=10;
+select * from employee2 order by empno;
+delete from employee2 where ename='first';
+select * from employee2;
+
+rename table employee2 to empdel;
+delete from empdel where ename='second';
+select * from empdel;
+
+#schema side
+create table called employee2(empno int,empname varchar(20),dt.of join date,salary int,designation varchar(20));
+
+#query side
+describe employee2;
+insert into employee2 values(10,'first','1990-12-28',2000,'clerk');                               
+insert into employee2 values(11,'second','2004-12-28',20000,'engineer');
+insert into employee2 values(12,'second','2004-12-28',20000,'engineer');
+insert into employee2 values(13,'second','2004-12-28',20000,'clerk');
+insert into employee2 values(14,'second','2004-12-28',20000,'engineer');
+select designation from employee2 group by designation;
+
+
+#schema side
+create table called employee2(empno int,empname varchar(20),dt.of join date,salary int,designation varchar(20));
+
+#query side
+describe employee2;
+insert into employee2 values(10,'first','1990-12-28',2000,'clerk');                               
+insert into employee2 values(11,'second','2004-12-28',20000,'engineer');
+insert into employee2 values(12,'second','2004-12-28',20000,'engineer');
+insert into employee2 values(13,'second','2004-12-28',20000,'clerk');
+insert into employee2 values(14,'second','2004-12-28',20000,'engineer');
+#select designation from employee2 group by designation;
+select designation,sum(salary) from employee2 group by designation;
+
+select min(salary) from employee3;
+select max(salary) from employee3;
+#select avg(salary) from employee3 where city = 'hyd';
+#select sum(salary) from employee3 where city = 'chennai';
+select avg(salary) from employee3;
+select sum(salary) from employee3;
+
+
+insert into employee3 values(10,'first','1990-12-28',2000,'clerk');                               
+insert into employee3 values(11,'second','2004-12-28',20000,'engineer');
+insert into employee3 values(12,'second','2004-12-28',20000,'engineer');
+insert into employee3 values(13,'second','2004-12-28',20000,'clerk');
+select designation,sum(salary) from employee3 group by designation;
+
+select min(salary) from employee3;
+select max(salary) from employee3;
+select avg(salary) from employee3;
+select sum(salary) from employee3;
+select * from employee3 where designation like '_lerk';
+select * from employee3 where designation like 'e%';
+
+select * from employee3 where salary=(select min(salary) from employee3);
+select * from employee3 where designation like '_lerk';
+select * from employee3 where designation like 'e%';
+
+
+
+
